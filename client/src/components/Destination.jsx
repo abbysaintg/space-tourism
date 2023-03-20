@@ -30,20 +30,20 @@ function Destination() {
 			</h2>
 			<img src={imageMap[selectedDestination]} alt={selectedDestination} />
 			<div className="tab-list underline-indicators flex">
-				<button onClick={handleDestinationClick} value="Moon" className="tab-link uppercase ff-sans-cond text-accent letter-spacing-2">
+				<button aria-selected="true" onClick={handleDestinationClick} value="Moon" className="uppercase ff-sans-cond text-accent letter-spacing-2">
 					Moon
 				</button>
-				<button onClick={handleDestinationClick} value="Mars" className="tab-link uppercase ff-sans-cond text-accent letter-spacing-2">
+				<button aria-selected="false" onClick={handleDestinationClick} value="Mars" className="uppercase ff-sans-cond text-accent letter-spacing-2">
 					Mars
 				</button>
-				<button onClick={handleDestinationClick} value="Europa" className="tab-link uppercase ff-sans-cond text-accent letter-spacing-2">
+				<button aria-selected="false" onClick={handleDestinationClick} value="Europa" className="uppercase ff-sans-cond text-accent letter-spacing-2">
 					Europa
 				</button>
-				<button onClick={handleDestinationClick} value="Titan" className="tab-link uppercase ff-sans-cond text-accent letter-spacing-2">
+				<button aria-selected="false" onClick={handleDestinationClick} value="Titan" className="uppercase ff-sans-cond text-accent letter-spacing-2">
 					Titan
 				</button>
 			</div>
-			<article className="destination-info">
+			<article className="destination-info flow">
 				<h2 className="fs-800 ff-serif uppercase">{selectedDestination}</h2>
 				<p className='blurb'>{destinationData.description}</p>
 				<div className="destination-meta flex">
