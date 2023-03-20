@@ -4,13 +4,22 @@ import logo from './assets/shared/logo.svg'
 import iconHamburger from './assets/shared/icon-hamburger.svg'
 import iconClose from './assets/shared/icon-close.svg'
 
-function Navbar({ setRoute }) {
+function Navbar({ setSelectedRoute }) {
 	const [isVisible, setIsVisible] = useState(false)
-
+    const [currentPage, setCurrentPage] = useState("home")
 
 	const handleToggleClick = () => {
 		setIsVisible(!isVisible)
 	}
+
+    const handleLinkClick = (page) => {
+		setSelectedRoute(page)
+        setCurrentPage(page)
+	}
+
+    function isLinkSelected(page) {
+        return page === currentPage
+    }
 
 	return (
 		<header className="primary-header flex">
@@ -25,16 +34,16 @@ function Navbar({ setRoute }) {
 			</button>
 			<nav>
 				<ul id="primary-navigation" className={`${isVisible ? 'menu-visible' : 'menu-not-visible'} primary-navigation underline-indicators flex`}>
-					<Link to="/" className="uppercase text-white letter-spacing-2" onClick={() => setRoute('home')}>
+					<Link to="/" aria-selected={isLinkSelected('home')} className="uppercase text-white letter-spacing-2" onClick={() => handleLinkClick('home')}>
 						<span aria-hidden="true">00</span>Home
 					</Link>
-					<Link to="/destination" className="uppercase text-white letter-spacing-2" onClick={() => setRoute('destination')}>
+					<Link to="/destination" aria-selected={isLinkSelected('destination')} className="uppercase text-white letter-spacing-2" onClick={() => handleLinkClick('destination')}>
 						<span aria-hidden="true">01</span>Destination
 					</Link>
-					<Link to="/crew" className="uppercase text-white letter-spacing-2" onClick={() => setRoute('crew')}>
+					<Link to="/crew" aria-selected={isLinkSelected('crew')} className="uppercase text-white letter-spacing-2" onClick={() => handleLinkClick('crew')}>
 						<span aria-hidden="true">02</span>Crew
 					</Link>
-					<Link to="/technology" className="uppercase text-white letter-spacing-2" onClick={() => setRoute('technology')}>
+					<Link to="/technology" aria-selected={isLinkSelected('technology')} className="uppercase text-white letter-spacing-2" onClick={() => handleLinkClick('technology')}>
 						<span aria-hidden="true">03</span>Technology
 					</Link>
 				</ul>

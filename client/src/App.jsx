@@ -7,11 +7,11 @@ import Crew from './components/Crew'
 import Technology from './components/Technology'
 
 function App() {
-    const [route, setRoute] = useState('home')
+    const [selectedRoute, setSelectedRoute] = useState('home')
 
 	return (
-		<div className={`app ${route}`}>
-			<Navbar setRoute={setRoute}/>
+		<div className={`app ${selectedRoute}`}>
+			<Navbar setSelectedRoute={setSelectedRoute}/>
 			<Routes>
 				<Route path="/" element={<Home />} />
 				<Route path="/destination" element={<Destination />} />

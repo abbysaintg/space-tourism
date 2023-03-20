@@ -1,6 +1,6 @@
 # SPACE TOURISM MULTI-PAGE WEBSITE
 
-A WIP project undertaken from [Frontend Mentor](https://www.frontendmentor.io) using React & CSS. 
+A WIP project undertaken from [Frontend Mentor](https://www.frontendmentor.io) using React and CSS, with mobile and desktop layouts. 
 
 <img width="1461" alt="Screenshot 2023-03-20 at 5 14 30 PM" src="https://user-images.githubusercontent.com/116386196/226467997-4cbf0ac9-0947-4161-8d33-90006d3313fe.png">
 

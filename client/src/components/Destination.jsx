@@ -20,7 +20,14 @@ function Destination() {
 	const handleDestinationClick = (event) => {
 		const destinationName = event.target.value
 		setSelectedDestination(destinationName)
-		console.log(destinationData)
+		const buttons = event.target.parentNode.querySelectorAll('button')
+		buttons.forEach((button) => {
+			if (button.value === destinationName) {
+				button.setAttribute('aria-selected', true)
+			} else {
+				button.setAttribute('aria-selected', false)
+			}
+		})
 	}
 
 	return (
@@ -45,17 +52,17 @@ function Destination() {
 			</div>
 			<article className="destination-info flow">
 				<h2 className="fs-800 ff-serif uppercase">{selectedDestination}</h2>
-				<p className='blurb'>{destinationData.description}</p>
+				<p className="blurb">{destinationData.description}</p>
 				<div className="destination-meta flex">
-                    <div>
-                        <h3 className="text-accent fs-200 uppercase">Avg. distance</h3>
-                        <p className="fs-500 ff-serif uppercase">{destinationData.distance}</p>
-                    </div>
-                    <div>
-                        <h3 className="text-accent fs-200 uppercase">Est. travel time</h3>
-                        <p className="fs-500 ff-serif uppercase">{destinationData.travel}</p>
-                    </div>
-                </div>
+					<div>
+						<h3 className="text-accent fs-200 uppercase">Avg. distance</h3>
+						<p className="fs-500 ff-serif uppercase">{destinationData.distance}</p>
+					</div>
+					<div>
+						<h3 className="text-accent fs-200 uppercase">Est. travel time</h3>
+						<p className="fs-500 ff-serif uppercase">{destinationData.travel}</p>
+					</div>
+				</div>
 			</article>
 		</main>
 	)
